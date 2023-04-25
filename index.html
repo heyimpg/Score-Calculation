@@ -4,115 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <title>Document</title>
-    <style>
-        .color_field_1 {
-            text-align: center;
-            background-color: rgb(226, 173, 173);
-        }
-        .color_field_2 {
-            text-align: center;
-            background-color: rgb(106, 209, 106);
-        }
-        .color_field_3 {
-            text-align: center;
-            background-color: rgb(152, 152, 235);
-        }
-
-        .color_sub_field_1_2{
-            background-color: rgb(240, 127, 127);
-        }
-        .color_sub_field_2_2{
-            background-color: rgb(35, 194, 35);
-        }
-        .color_sub_field_3_1{
-            background-color: rgb(112, 112, 230);
-        }
-
-        .btn-reset {
-            font-family: system-ui, sans-serif;
-            /* font-size: 3.5rem; */
-            cursor: pointer;
-            padding: .1em .6em;
-            font-weight: bold;  
-            border: none;
-            }
-
-        .btn-reset:hover {
-            transition: background-position .4s, background-size 0s;
-        }
-        
-        .btn-reset:active {
-            box-shadow: 0 0 9e9q inset #0009; 
-            background-color: grey;
-            color: #fff;
-        }
-
-        .btn-center {
-            
-            text-align: center;
-            /* margin: auto; */
-            display: flex;
-            justify-content: center;
-        }
-        .btn-reset {
-            border: 1px solid black;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Score Calculation</title>
+    <!-- boostrap & jquery cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- js -->
+    <script src="/script.js"></script>
 </head>
 <body>
-    <div class="btn-center" style="margin: auto;">
-        <button class="btn-reset">RESET</button>
-    </div>
-    
-    <div class="m-3">
-        <div class=" sm-5 color_field_1">
-            <div class="pt-4 color_sub_field_1_1">
-                PHUONG
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_1"></div>
-            <div class="pt-4 color_sub_field_1_2">
-                TAI
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_2"></div>
+    <div class="container py-3">
+        <div class="formNumberPerson">
+            <form name="formNumber">
+                <div class="form-group">
+                  <label for="numberPerson">Enter your number person</label>
+                  <input type="number" class="form-control" id="numberPerson">
+                  <!-- <small id="emailHelp" class="form-text text-muted">...</small> -->
+                </div>
+                <div class="text-left"><button type="submit" class="btn btn-primary" onclick="submitFormNumber()">Submit</button></div>
+            </form>
         </div>
-        <br>
-        <div class=" sm-5 color_field_2">
-            <div class="pt-4 color_sub_field_2_1">
-                PHUONG
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_1"></div>
-            <div class="pt-4 color_sub_field_2_2">
-                HUNG
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_2"></div>
-        </div>
-        
-        <br>
-        <div class=" sm-5 color_field_3" style="margin: 0;">
-            <div class="pt-4 color_sub_field_3_2">
-                TAI
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_1"></div>
-            <div class="pt-4 color_sub_field_3_1">
-                HUNG
-                <br>
-                <input type="number" value="0" class="value_general input_value_1_2"></div>
+
+        <div class="formInfoPerson">
+            <label class="mt-5" id="numberPersonResult">Number person: x</label>
+            <form name="formInfo" action="/calculator/calculator.html">
+                <div class="form-group formInfoGroup">
+                    <input type="hidden" value="0" name="numberPerson">
+                    <input type="text" class="form-control mt-3" name="person" placeholder="Name person 1">
+                </div>
+                <div class="text-right"><button type="submit" class="btn btn-primary">Next page</button></div>
+            </form>
         </div>
     </div>
-
-    <script>
-        var btn_reset = document.querySelector('.btn-reset');
-        console.log(btn_reset);
-        
-        btn_reset.addEventListener('click', e => {
-            console.log("object");
-            document.querySelectorAll('.value_general').forEach(val => {val.value = "0"});
-        })
-
-    </script>
 </body>
 </html> 
