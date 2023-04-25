@@ -9,14 +9,11 @@ $(()=> {
     numberPerson = urlParams.get('numberPerson')
     console.log(numberPerson);
 
-    if (numberPerson < 1) {
-        alert('Please enter a number');
+    if (!numberPerson || numberPerson < 1) {
+        alert('Please enter a number person valid');
         window.location.href = '/index.html';
         return;
     } else {
-        // const person0 = urlParams.get('person0')
-        // console.log('person0: ', person0);
-
         person = new Array(numberPerson);
 
         for (let i = 0  ; i < numberPerson; i++) {
@@ -29,6 +26,8 @@ $(()=> {
     }
 
     function renderHtml() {
+        $('.formInfoPerson').empty();
+
         for (let i = 0  ; i < numberPerson; i++) {
             // $('.formInfoPerson').empty();
             $('.formInfoPerson').append(`

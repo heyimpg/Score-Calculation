@@ -11,7 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- js -->
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./css-general.css">
 </head>
 <body>
     <div class="container py-3">
@@ -19,7 +21,7 @@
             <form name="formNumber">
                 <div class="form-group">
                   <label for="numberPerson">Enter your number person</label>
-                  <input type="number" class="form-control" id="numberPerson">
+                  <input type="number" class="form-control" id="numberPerson" placeholder="0">
                   <!-- <small id="emailHelp" class="form-text text-muted">...</small> -->
                 </div>
                 <div class="text-left"><button type="submit" class="btn btn-primary" onclick="submitFormNumber()">Submit</button></div>
@@ -28,10 +30,10 @@
 
         <div class="formInfoPerson">
             <label class="mt-5" id="numberPersonResult">Number person: x</label>
-            <form name="formInfo" action="/calculator/calculator.html">
+            <form name="formInfo" action="./calculator/calculator.html">
                 <div class="form-group formInfoGroup">
                     <input type="hidden" value="0" name="numberPerson">
-                    <input type="text" class="form-control mt-3" name="person" placeholder="Name person 1">
+                    <input type="text" class="form-control mt-3" name="person" placeholder="Name person 1" required>
                 </div>
                 <div class="text-right"><button type="submit" class="btn btn-primary">Next page</button></div>
             </form>
